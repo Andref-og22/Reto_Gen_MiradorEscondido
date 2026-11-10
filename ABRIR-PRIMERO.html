@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El mirador escondido · Expedición Bruma Verde</title>
+  <link rel="stylesheet" href="expedicion/estilos.css">
+  <script src="expedicion/paradas.js" defer></script>
+  <script src="expedicion/guia.js" defer></script>
+</head>
+<body>
+  <a href="#estacion" class="saltar">Saltar a la parada actual</a>
+  <header class="cabecera">
+    <div class="cabecera-texto">
+      <p class="ceja">Generation Colombia · Desarrollo web</p>
+      <h1>El mirador escondido</h1>
+      <p>Construye la guía de rutas del Parque Bruma Verde.</p>
+    </div>
+    <svg class="mapa" viewBox="0 0 300 145" role="img" aria-label="Dos rutas conectan la entrada del parque con el mirador">
+      <path d="M14 120 Q56 32 113 83T205 60T284 28M13 137 Q63 74 122 107T219 91T288 62M28 90Q55 19 111 57T201 37T270 13" fill="none" stroke="#92b5a0" opacity=".35"/>
+      <path d="M48 117 Q81 62 121 93Q165 133 243 29" fill="none" stroke="#badebf" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 8"/>
+      <path d="M48 117 243 29" fill="none" stroke="#f1cc7d" stroke-width="2"/>
+      <circle cx="48" cy="117" r="6" fill="#badebf"/><circle cx="243" cy="29" r="7" fill="#f1cc7d"/>
+      <text x="30" y="141">Entrada</text><text x="205" y="15">Mirador</text>
+    </svg>
+  </header>
+
+  <main class="contenedor">
+    <aside class="navegacion" aria-label="Paradas de la expedición">
+      <div class="progreso">
+        <p class="ceja">Recorrido</p>
+        <p id="progreso-texto">0 de 5 paradas</p>
+        <progress id="progreso" value="0" max="5" aria-label="Paradas completadas"></progress>
+      </div>
+      <nav id="menu"></nav>
+    </aside>
+
+    <div class="trabajo">
+      <section id="estacion" class="panel" aria-labelledby="titulo-parada">
+        <p id="numero" class="ceja">Inicio</p>
+        <h2 id="titulo-parada" tabindex="-1">Antes de empezar</h2>
+        <div id="consigna">
+          <p>Extrae el ZIP completo. Vuelve a abrir ABRIR-PRIMERO.html desde la carpeta extraída, con la carpeta expedicion a su lado.</p>
+        </div>
+        <div id="acciones" class="acciones"></div>
+        <p id="resultado" class="resultado" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="zona-vista" class="panel vista" aria-labelledby="titulo-vista" hidden>
+        <div class="vista-cabecera">
+          <div><p class="ceja">Tu proyecto</p><h2 id="titulo-vista">Vista visitante</h2></div>
+          <button id="actualizar" class="secundario" type="button">Recargar vista</button>
+        </div>
+        <div class="formatos" aria-label="Ancho de la vista">
+          <button id="ancho-amplio" class="secundario" type="button" aria-pressed="true">Ancho del panel</button>
+          <button id="ancho-movil" class="secundario" type="button" aria-pressed="false">Vista móvil</button>
+        </div>
+        <div class="marco" aria-busy="true">
+          <p id="cargando-vista" class="cargando-vista">Cargando la página del parque…</p>
+          <iframe id="preview" title="Página del parque que estás editando"></iframe>
+        </div>
+        <p class="nota-vista">Después de guardar, pulsa <strong>Comprobar y continuar</strong> o recarga esta vista para probar por tu cuenta.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="pie">Actividad local · Java básico, HTML, CSS y JavaScript · Parque ficticio</footer>
+</body>
+</html>
